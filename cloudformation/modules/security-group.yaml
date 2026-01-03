@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Create Security Groups
+
+Resources:
+  TargetSG:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group allowing ssh
+      VpcId: !ImportValue Group09VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0  
+      Tags: 
+        - Key: Name
+          Value: Group09_SG
+
+Outputs:
+  TargetSG_ID: 
+    Value: !Ref TargetSG
+    Export: 
+      Name: Group09_SG_ID
