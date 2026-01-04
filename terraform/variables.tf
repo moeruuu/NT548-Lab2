@@ -13,14 +13,17 @@ variable "project_name" {
 variable "ec2_ami" {
   description = "AMI ID for EC2"
   type        = string
+  default     = "ami-0c02fb55956c7d316"
 }
 
 variable "ec2_key_name" {
   description = "Name of AWS key pair"
   type        = string
+  default     = "my-key-pair"
 }
 
 variable "my_ip_cidr" {
   description = "Personal IP for SSH"
   type        = string
+  default     = "0.0.0.0/0"
 }
