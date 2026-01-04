@@ -22,7 +22,6 @@ module "ec2" {
 
   ami           = var.ec2_ami
   instance_type = "t3.micro"
-  key_name      = var.ec2_key_name
   my_ip_cidr    = var.my_ip_cidr
 }
 
