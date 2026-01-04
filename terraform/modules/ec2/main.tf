@@ -51,7 +51,6 @@ resource "aws_instance" "bastion" {
   instance_type               = var.instance_type
   subnet_id                   = var.public_subnet_id
   associate_public_ip_address  = true
-  key_name                    = var.key_name
   vpc_security_group_ids       = [aws_security_group.public_sg.id]
 
   tags = {
@@ -64,7 +63,6 @@ resource "aws_instance" "private" {
   instance_type               = var.instance_type
   subnet_id                   = var.private_subnet_id
   associate_public_ip_address  = false
-  key_name                    = var.key_name
   vpc_security_group_ids       = [aws_security_group.private_sg.id]
 
   tags = {

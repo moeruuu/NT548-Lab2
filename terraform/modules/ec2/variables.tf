@@ -25,11 +25,6 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
-variable "key_name" {
-  description = "Name ofAWS key pair"
-  type        = string
-}
-
 variable "my_ip_cidr" {
   description = "Personal IP for SSH"
   type        = string
